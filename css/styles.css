@@ -10,16 +10,6 @@ a {
     color: rgb(236, 236, 236);
 }
 
-#header {
-    display: flex;
-    width: 100vw;
-    height: 15vh;
-    justify-content: flex-end;
-}
-
-.header-spacer {
-    width: 20vw;
-}
 
 footer {
     display: flex;
@@ -34,7 +24,28 @@ footer {
     width: 100vw;
 }
 
-h1 {
-    align-items: flex-end;
-    
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 100vw;
+}
+
+.item1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    height: 20vh;
+}
+
+.grid-container > div {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.item3 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 7;
+    height: 20vh;
 }
