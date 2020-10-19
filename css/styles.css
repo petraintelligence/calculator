@@ -1,5 +1,5 @@
 body {
-    background-image: url("../images/background-min.jpg");
+    /* background-image: url("../images/background-min.jpg");*/
     background-size: cover;
     background-color: #cccccc;
     display: flex;
@@ -25,20 +25,42 @@ footer {
 }
 
 .grid-container {
-    display: grid;
-    grid-template-columns: auto auto;
-    width: 100vw;
-    height: 95vh;
+    display: flex;
+    padding-top: 5vh;
 }
 
 #calculator-container {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
     border: 1px solid black;
     grid-template-columns: auto auto auto;
     background-color: white;
+    column-gap: 10px;
+    row-gap: 15px;
+    padding: 20px;
+    width: 600px;
+    height: 850px;
+}
+
+#screen {
+    grid-column: 1 / 5;
+    background-color: black;
+    position: relative;
 }
 
 .button {
+    display: flex;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
 
+#text {
+    position: absolute;
+    bottom: 0;
+    right: 1vw;
+    color: white;
+    font-size: x-large ;
 }
