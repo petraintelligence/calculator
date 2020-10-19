@@ -26,26 +26,19 @@ footer {
 
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto;
     width: 100vw;
+    height: 95vh;
 }
 
-.item1 {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    height: 20vh;
+#calculator-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    border: 1px solid black;
+    grid-template-columns: auto auto auto;
+    background-color: white;
 }
 
-.grid-container > div {
-    text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
-}
+.button {
 
-.item3 {
-    grid-column-start: 2;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 7;
-    height: 20vh;
 }
