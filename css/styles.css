@@ -64,3 +64,19 @@ footer {
     color: white;
     font-size: x-large ;
 }
+
+
+
+#compute {
+    grid-column: 4 / 5;
+    grid-row: 5 / 7;
+}
+
+#addition {
+    grid-column: 4 / 5;
+    grid-row: 3 / 5;  
+}
+
+#zero {
+    grid-column: 1 / 3;
+}
