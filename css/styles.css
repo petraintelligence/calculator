@@ -81,6 +81,7 @@ footer {
 
 #zero {
     grid-column: 1 / 3;
+    width: 195px;
 }
 
 .button:hover {background-color: #3e8e41}

@@ -1,9 +1,7 @@
 let currentTotal = 0;
-let firstNumber = 0;
-let secondNumber = 0;
 let operator = '';
-let inputCounter = 0;
 let currentNumber = 0;
+let previousNumber = 0;
 
 let currentNumberArray = [];
 
@@ -27,13 +25,16 @@ let operators = {
 function clearScreen() {
     currentNumberArray = [];
     currentNumber = 0;
-    inputCounter = 0;
-    document.getElementById("screen-text").textContent = currentNumber;
+    updateScreen();
 }
 
 function joinNumbers() {
     currentNumber = currentNumberArray.join("");
-    document.getElementById("screen-text").textContent = currentNumber;
+    updateScreen();
+}
+
+function updateScreen() {
+    document.getElementById("screen-text").textContent = currentNumber; 
 }
 
 function inputNumbers(button) {
@@ -41,6 +42,14 @@ function inputNumbers(button) {
     joinNumbers();
     console.log(currentNumberArray)
     console.log(currentNumber)
+}
+
+function inputMathSymbol(button) {
+    operator = '+';
+    previousNumber = currentNumber;
+    currentNumber = 0;
+    currentNumberArray = [];
+    updateScreen();
 }
 
 document.getElementById("one").addEventListener("click", () => inputNumbers("one"));
@@ -56,14 +65,16 @@ document.getElementById("zero").addEventListener("click", () => inputNumbers("ze
 
 document.getElementById("clear").addEventListener("click", () => clearScreen());
 
+document.getElementById("addition").addEventListener("click", () => inputMathSymbol('+'));
 
 
-document.getElementById("addition").addEventListener("click", () => operator = '+');
+
 document.getElementById("compute").addEventListener("click", function() {
     calculateExpression(); 
 });
 
 
 function calculateExpression() {
-    currentTotal = operators[operator](firstNumber, secondNumber)
+    currentNumber = operators[operator](parseFloat(previousNumber), parseFloat(currentNumber));
+    updateScreen();
 }
