@@ -19,7 +19,10 @@ let numbersDict = {
 };
 
 let operators = {
-    "+": function( a, b) {return a + b}
+    "+": function( a, b) {return a + b},
+    "-": function( a, b) {return a - b},
+    "*": function( a, b) {return a * b},
+    "/": function( a, b) {return a / b}
 }
 
 function clearScreen() {
@@ -45,7 +48,7 @@ function inputNumbers(button) {
 }
 
 function inputMathSymbol(button) {
-    operator = '+';
+    operator = button;
     previousNumber = currentNumber;
     currentNumber = 0;
     currentNumberArray = [];
@@ -66,6 +69,9 @@ document.getElementById("zero").addEventListener("click", () => inputNumbers("ze
 document.getElementById("clear").addEventListener("click", () => clearScreen());
 
 document.getElementById("addition").addEventListener("click", () => inputMathSymbol('+'));
+document.getElementById("subtract").addEventListener("click", () => inputMathSymbol('-'));
+document.getElementById("multiply").addEventListener("click", () => inputMathSymbol('*'));
+document.getElementById("divide").addEventListener("click", () => inputMathSymbol('/'));
 
 
 
