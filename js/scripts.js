@@ -1,7 +1,7 @@
-let currentTotal = 0;
+let currentTotal;
 let operator = '';
-let currentNumber = 0;
-let previousNumber = 0;
+let currentNumber;
+let previousNumber;
 
 let currentNumberArray = [];
 
